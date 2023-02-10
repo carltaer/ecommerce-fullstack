@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme)=>({
     display: "flex",
     flexDirection: "column",
     alignContent: "center",
+    justifyContent: "center",
     background: "rgb(250, 249, 246, 0.8)",
     border: "3px solid rgba(0, 0, 0, 0.3)",
     borderRadius: "20px 0 20px 0",
