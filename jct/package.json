@@ -1,0 +1,23 @@
+{
+  "name": "jct",
+  "version": "1.0.0",
+  "description": "Carl's ecommerce project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carltaer/ecommerce-fullstack.git"
+  },
+  "author": "Carl Taer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carltaer/ecommerce-fullstack/issues"
+  },
+  "homepage": "https://github.com/carltaer/ecommerce-fullstack#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
