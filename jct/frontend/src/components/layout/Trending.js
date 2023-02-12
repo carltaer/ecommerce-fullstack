@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
   Box, 
   makeStyles,
@@ -10,7 +10,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 
-import items from "../../items"
+import axios from "axios"
 
 import "../../assets/fonts/static/Inter-Medium.ttf"
 
@@ -68,6 +68,16 @@ const useStyles = makeStyles((theme)=>({
  
 const Trending = () => {
   const classes = useStyles()
+
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    const getItems = async () => {
+      const { data } = await axios("/api/v1/items")
+      setItems(data)
+    };
+    getItems()
+  }, [])
 
   return (
     <Box component="section" className={classes.root}>

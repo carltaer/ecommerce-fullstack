@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { 
   Box,
@@ -20,7 +20,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 
 import { useParams } from "react-router-dom"
-import items from '../../items'
+
+import axios from 'axios'
+
 import { blue, green, orange, red } from "@material-ui/core/colors"
 
 const useStyles = makeStyles((theme)=>({
@@ -88,12 +90,28 @@ const useStyles = makeStyles((theme)=>({
   },
 }))
 
+
 const Item = () => {
+
+  const [item, setItem] = useState({})
 
   const classes = useStyles()
 
   const { id } = useParams()
-  const item = items.find(item => item._id === id)
+  //const items = item.find(item => item._id === id)
+
+  useEffect(() => {
+    const getItem = async () => {
+      const { data } = await axios(`/api/v1/items/${id}`)
+      setItem(data)
+    }
+
+    getItem()
+  }, [])
+
+  console.log(item)
+
+  
   
   return (
     <>
