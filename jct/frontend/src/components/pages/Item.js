@@ -107,7 +107,7 @@ const Item = () => {
     }
 
     getItem()
-  }, [])
+  }, [id])
 
   console.log(item)
 
