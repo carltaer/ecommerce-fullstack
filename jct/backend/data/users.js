@@ -1,4 +1,4 @@
-[
+const users  = [
     {
         "name": "Alice",
         "email": "alice@example.com",
@@ -30,4 +30,6 @@
         "isAdmin": false,
     },
 ]
+
+export default users
 
