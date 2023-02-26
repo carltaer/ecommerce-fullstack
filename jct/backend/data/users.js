@@ -1,38 +1,31 @@
+import bcrypt from "bcryptjs"
+
 const users  = [
 	{
-		"id": "1",
-		"name": "Alice",
+		"name": "Admin",
 		"email": "alice@example.com",
-		"password": "password123",
-		"isAdmin": false
+		"password": bcrypt.hashSync("admin", 10),
+		"isAdmin": true,
 	},
 	{
-		"id": "2",
-		"name": "Bob",
+		"name": "Bob Doe",
 		"email": "bob@example.com",
-		"password": "qwertyuiop",
-		"isAdmin": true
+		"password": bcrypt.hashSync("bobdoe", 10),
 	},
 	{
-		"id": "3",
-		"name": "Charlie",
+		"name": "Charlie Doe",
 		"email": "charlie@example.com",
-		"password": "password456",
-		"isAdmin": false
+		"password": bcrypt.hashSync("charliedoe", 10),
 	},
 	{
-		"id": "4",
-		"name": "Dave",
+		"name": "Dave Doe",
 		"email": "dave@example.com",
-		"password": "123456789",
-		"isAdmin": true
+		"password": bcrypt.hashSync("davedoe", 10),
 	},
 	{
-		"id": "v5",
-		"name": "Eve",
+		"name": "Eve Doe",
 		"email": "eve@example.com",
-		"password": "password789",
-		"isAdmin": false
+		"password": bcrypt.hashSync("evedoe", 10),
 	}
 ]
 
