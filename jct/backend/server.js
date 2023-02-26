@@ -1,12 +1,15 @@
 import express, { request, response } from "express"
 import dotenv from "dotenv"
 
+import connectDB from "./config/db.js"
 
 import items from "./data/items.js"
 import users from "./data/users.js"
 import orders from "./data/orders.js"
 
 dotenv.config()
+
+connectDB()
 
 const APP = express()
 const PORT = process.env.PORT || 8000
