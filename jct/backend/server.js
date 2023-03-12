@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 
 import connectDB from "./config/db.js"
 
-import items from "./data/items.js"
+import itemRoutes from "./routes/v1/itemRoutes.js"
 import users from "./data/users.js"
 import orders from "./data/orders.js"
 
@@ -20,13 +20,11 @@ APP.get("/", (request, response) => {
 })
 
 //get all items
-APP.get("/api/v1/items", (request, response) => {
-    response.json(items)
-})
+APP.use("/api/v1/items", itemRoutes)
 
 //get items with specific id
 APP.get("/api/v1/items/:id", (request, response) => {
-    const item = items.find((item) => item._id === request.params.id)
+    const item = itemRoutes.find((item) => item._id === request.params.id)
     response.json(item)
 })
 
